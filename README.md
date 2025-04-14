@@ -1,33 +1,25 @@
 # Voice Assistant with Twilio and OpenAI
 
-This project creates a voice assistant that uses Twilio Voice and ConversationRelay, and the Open AI API that can engage in two-way conversations over a phone call.
+This project creates a voice assistant that uses [Twilio Voice](https://www.twilio.com/docs/voice) and [ConversationRelay](https://www.twilio.com/docs/voice/twiml/connect/conversationrelay), and the [Open AI API](https://docs.anthropic.com/) that can engage in two-way conversations over a phone call.
 
 ## Overview
 
 This application allows users to call a Twilio number and interact with an AI assistant powered by OpenAI's GPT-4o-mini model. The assistant will respond to user queries in natural language.
 
-## Features
-
--   Real-time voice conversation with an AI assistant
--   WebSocket-based communication
--   Session management for multiple concurrent calls
--   Voice-optimized responses from OpenAI
-
 ## Prerequisites
 
--   Python 3.10+
--   Twilio account
--   OpenAI API key
--   ngrok for exposing localhost to the internet
+- [Python 3.10+](https://www.python.org/downloads/)
+- A Twilio Account: Sign up for a free trial here.
+- A Twilio Number with Voice Capabilities: [Instructions to purchase a number.](https://support.twilio.com/hc/en-us/articles/223180928-How-to-Buy-a-Twilio-Phone-Number)
+- An Open AI Account and API Key: Visit Open AI's platform [here](https://platform.openai.com/api-keys) for more information.
 
 ## Installation
 
 1.  Clone this repository
 2.  Install the required dependencies:
+   `pip  install  -r  requirements.txt`
 
-`pip  install  -r  requirements.txt`
-
-3.  Configure your environment variables in the  .env  file:
+4.  Configure your environment variables in the  .env  file:
     - `cp .env.example .env`
     - `OPENAI_API_KEY`: Your OpenAI API key
     - `NGROK_URL`: Your ngrok URL (without https://)
@@ -35,14 +27,12 @@ This application allows users to call a Twilio number and interact with an AI as
 ## Usage
 
 1.  Start ngrok to expose your local server:
+   `ngrok  http  8080`
 
-`ngrok  http  8080`
-
-2.  Update the  `NGROK_URL`  in your  .env  file with the new URL from ngrok
+3.  Update the  `NGROK_URL`  in your  .env  file with the new URL from ngrok
     
-3.  Run the application:
-    
-`python  main.py`
+4.  Run the application:
+   `python  main.py`
 
 4.  Configure your Twilio phone number to use the  `/twiml`  endpoint as the webhook for incoming calls (https://your-ngrok-url/twiml)
     
