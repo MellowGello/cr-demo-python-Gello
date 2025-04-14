@@ -1,4 +1,4 @@
-# Voice Assistant with Twilio and OpenAI
+# Voice Assistant with Twilio and OpenAI (Python)
 
 This project creates a voice assistant that uses [Twilio Voice](https://www.twilio.com/docs/voice) and [ConversationRelay](https://www.twilio.com/docs/voice/twiml/connect/conversationrelay), and the [Open AI API](https://docs.anthropic.com/) that can engage in two-way conversations over a phone call.
 
