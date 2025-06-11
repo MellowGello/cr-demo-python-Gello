@@ -33,7 +33,7 @@ async def ai_response(messages):
     )
     return completion.choices[0].message.content
 
-@app.get("/twiml")
+@app.post("/twiml")
 async def twiml_endpoint():
     """Endpoint that returns TwiML for Twilio to connect to the WebSocket"""
     xml_response = f"""<?xml version="1.0" encoding="UTF-8"?>
